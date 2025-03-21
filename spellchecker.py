@@ -10,7 +10,7 @@ class SpellChecker:
     def replaceChars(self, text):
         chars = "\\'*_-[]{}()<>?/|!@#$%^&*+="
         for c in chars:
-            text - text.replace(c, '')
+            text = text.replace(c, '')
         return text
 
     def handleSentence(self, txtIn, language):
@@ -19,7 +19,7 @@ class SpellChecker:
         if language == "italiano":
             d.Dictionary().loadDictionary("C:/Users/User/PycharmProjects/Lab03/it_dictionary.txt")
             txtInPulito = self.replaceChars(txtIn)
-            words = [txtInPulito.split()]
+            words = txtInPulito.split()
             for word in words:
                 if word not in d.Dictionary().dict:
                     errori.append(word)
