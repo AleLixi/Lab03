@@ -6,7 +6,7 @@ class Dictionary:
         try :
             with open(path, 'r', encoding='utf-8') as file:
                 for line in file:
-                    word = line.strip().split()
+                    word = line.strip().lower()
                     if word:
                         self._dict.add(word)
         except Exception as e:
