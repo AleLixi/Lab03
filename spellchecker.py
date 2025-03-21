@@ -14,18 +14,19 @@ class SpellChecker:
         return text
 
     def handleSentence(self, txtIn, language):
+        dizionario= d.Dictionary
         errori= []
         if language == "italian":
-            d.Dictionary().loadDictionary(r"C:/Users/User/PycharmProjects/Lab03/resources/Italian.txt")
+            dizionario.loadDictionary("C:/Users/User/PycharmProjects/Lab03/resources/Italian.txt")
         if language == "english":
-            d.Dictionary().loadDictionary(r"C:/Users/User/PycharmProjects/Lab03/resources/English.txt")
+            dizionario.loadDictionary("C:/Users/User/PycharmProjects/Lab03/resources/English.txt")
         if language == "spanish":
-            d.Dictionary().loadDictionary(r"C:/User/User/PycharmProjects/Lab03/resources/Spanish.txt")
+            dizionario.loadDictionary("C:/User/User/PycharmProjects/Lab03/resources/Spanish.txt")
 
         txtInPulito = self.replaceChars(txtIn)
         words = txtInPulito.split()
         for word in words:
-            if word not in d.Dictionary().dict:
+            if word not in dizionario:
                 errori.append(word)
         return errori
 
