@@ -15,22 +15,22 @@ class SpellChecker:
 
     def handleSentence(self, txtIn, language):
         errori= []
-        counter_errori = 0
-        if language == "italiano":
-            d.Dictionary().loadDictionary("C:/Users/User/PycharmProjects/Lab03/it_dictionary.txt")
-            txtInPulito = self.replaceChars(txtIn)
-            words = txtInPulito.split()
-            for word in words:
-                if word not in d.Dictionary().dict:
-                    errori.append(word)
-                    counter_errori += 1
-
-            else:
-                md.MultiDictionary().searchWord(txtIn, language)
-        if language == "inglese":
+        if language == "italian":
+            d.Dictionary().loadDictionary("C:/Users/User/PycharmProjects\Lab03/resources\Italian.txt")
+        if language == "english":
             d.Dictionary().loadDictionary("C:/Users/User/PycharmProjects/Lab03/en_dictionary.txt")
-        if language == "spagnolo":
+        if language == "spanish":
             d.Dictionary().loadDictionary("C:/Users/User/PycharmProjects/Lab03/es_dictionary.txt")
+
+        txtInPulito = self.replaceChars(txtIn)
+        words = txtInPulito.split()
+        for word in words:
+            if word not in d.Dictionary().dict:
+                errori.append(word)
+                return errori
+
+
+
 
     def printMenu(self):
         print("______________________________\n" +
@@ -44,5 +44,3 @@ class SpellChecker:
               "______________________________\n")
 
 
-def replaceChars(text):
-    pass
