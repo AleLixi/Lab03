@@ -27,7 +27,7 @@ while(True):
         print("Inserisci la tua frase in Italiano\n")
         txtIn = input()
         sc.handleSentence(txtIn,"italian")
-        print( "using contains")
+
 
         continue
 
